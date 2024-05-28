@@ -16,7 +16,7 @@ function getEnv<Key extends keyof Env>(
   parse: (value: string) => Env[Key]
 ): Env[Key] {
   const value = process.env[key];
-  if (!value) {
+  if (value === undefined) {
     return defaultValue;
   }
   return parse(value);
