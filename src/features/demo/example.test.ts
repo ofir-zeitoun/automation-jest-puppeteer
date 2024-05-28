@@ -1,6 +1,4 @@
 import puppeteer from "puppeteer";
-import { env } from "../../services/env-config";
-console.log("🚀 ~ config:", env);
 
 describe("First test", () => {
   it("should pass", () => {
