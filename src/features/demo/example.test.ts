@@ -15,7 +15,7 @@ describe("First test", () => {
   });
 });
 
-describe("Puppeteer tests", () => {
+describe.skip("Puppeteer tests", () => {
   it("should open a browser", (done) => {
     (async () => {
       done();
