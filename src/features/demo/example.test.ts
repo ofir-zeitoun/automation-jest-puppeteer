@@ -19,7 +19,6 @@ describe("Puppeteer tests", () => {
   it("should open a browser", (done) => {
     (async () => {
       done();
-      return;
       const browser = await puppeteer.launch({
         headless: false,
         slowMo: 75,
