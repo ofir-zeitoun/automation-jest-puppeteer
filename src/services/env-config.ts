@@ -4,6 +4,7 @@ dotenv.config();
 
 type Env = {
   HEADLESS: boolean;
+  DEVTOOLS: boolean;
   SLOW_MO: number;
   VIEWPORT_WIDTH: number;
   VIEWPORT_HEIGHT: number;
@@ -23,7 +24,8 @@ function getEnv<Key extends keyof Env>(
 }
 
 export const env = {
-  headless: getEnv("HEADLESS", true, (value) => value !== "false"),
+  headless: getEnv("HEADLESS", true, (value) => value === "true"),
+  devtools: getEnv("DEVTOOLS", false, (value) => value === "true"),
   //   headless: process.env.HEADLESS === "false" ? false : true,
   slowMo: getEnv("SLOW_MO", 0, parseInt),
   // timeout: getEnv("TIMEOUT", 1_000, parseInt),
