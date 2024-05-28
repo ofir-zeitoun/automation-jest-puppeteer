@@ -9,7 +9,7 @@ describe("split example", () => {
     browser = await puppeteer.launch({
       headless: env.headless,
       slowMo: env.slowMo,
-      devtools: env.devtools
+      devtools: env.devtools,
     });
   });
 
