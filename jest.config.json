@@ -1,0 +1,9 @@
+{
+  "preset": "jest-puppeteer",
+  "verbose": true,
+  "modulePathIgnorePatterns": ["<rootDir>/dist/"],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "testTimeout": 10000
+}

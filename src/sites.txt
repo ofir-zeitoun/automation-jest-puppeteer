@@ -1,0 +1,2 @@
+https://devexpress.github.io/testcafe/example/
+https://developer.chrome.com/
