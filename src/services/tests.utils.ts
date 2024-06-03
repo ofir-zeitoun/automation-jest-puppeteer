@@ -1,14 +1,11 @@
 import puppeteer, { Browser, Page } from "puppeteer";
+import { Nullable } from "../../@types";
 import { env } from "./env-config";
 
-export function createTestsUtil(site: string): {
-  browser: Browser;
-  page: Page;
-} {
-  const res: {
-    browser: Browser | null;
-    page: Page | null;
-  } = {
+type PuppeteerHandles = { browser: Browser; page: Page };
+
+export function createTestsUtil(site: string): PuppeteerHandles {
+  const res: Nullable<PuppeteerHandles> = {
     browser: null,
     page: null,
   };
@@ -38,5 +35,5 @@ export function createTestsUtil(site: string): {
     res.browser = null;
   });
 
-  return res;
+  return res as PuppeteerHandles;
 }
