@@ -5,14 +5,17 @@
   "main": "./dist/index.js",
   "scripts": {
     "start": "tsc -w",
-    "test": "jest"
+    "test": "jest",
+    "test:cucumber": "cucumber-js --require src/features/**/*steps.ts src/features/**/*.feature"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@cucumber/cucumber": "^10.8.0",
     "dotenv": "^16.4.5",
-    "puppeteer": "^22.9.0"
+    "puppeteer": "^22.9.0",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
