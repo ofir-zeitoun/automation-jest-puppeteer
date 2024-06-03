@@ -12,6 +12,7 @@ describe("split example", () => {
       headless: env.headless,
       slowMo: env.slowMo,
       devtools: env.devtools,
+      ...(env.incognito && { args: ["--incognito"] }),
     });
   });
 

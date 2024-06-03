@@ -9,6 +9,7 @@ type Env = {
   VIEWPORT_WIDTH: number;
   VIEWPORT_HEIGHT: number;
   // TIMEOUT: number;
+  INCOGNITO: boolean;
 };
 
 function getEnv<Key extends keyof Env>(
@@ -33,4 +34,5 @@ export const env = {
     width: getEnv("VIEWPORT_WIDTH", 1080, parseInt),
     height: getEnv("VIEWPORT_HEIGHT", 1024, parseInt),
   },
+  incognito: getEnv("INCOGNITO", true, (value) => value === "true"),
 };
