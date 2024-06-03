@@ -1,6 +1,8 @@
 import puppeteer, { Browser, Page } from "puppeteer";
 import { env } from "../../../services";
 
+const site = "https://developer.chrome.com/";
+
 describe("split example", () => {
   let browser: Browser;
   let page: Page;
@@ -15,7 +17,7 @@ describe("split example", () => {
 
   beforeEach(async () => {
     page = await browser.newPage();
-    await page.goto("https://developer.chrome.com/");
+    await page.goto(site);
     await page.setViewport(env.viewport);
   });
 
