@@ -16,7 +16,6 @@ describe("First test", () => {
 describe.skip("Puppeteer tests", () => {
   it("should open a browser", (done) => {
     (async () => {
-      done();
       const browser = await puppeteer.launch({
         headless: false,
         slowMo: 75,
