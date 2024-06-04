@@ -1,8 +1,6 @@
-//@ts-ignore
-const { Given, When, Then } = require("@cucumber/cucumber");
-//@ts-ignore
-const assert = require("assert");
-const { add, subtract } = require("./calculator");
+import assert from "assert";
+import { Given, When, Then } from "@cucumber/cucumber";
+import { add, subtract } from "./calculator";
 
 let first: number;
 let second: number;

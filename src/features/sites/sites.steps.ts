@@ -1,13 +1,15 @@
+import assert from "assert";
 import type { Browser, Page } from "puppeteer";
 import puppeteer from "puppeteer";
 import { env } from "../../services";
-
-//@ts-ignore
-const { Given, When, Then } = require("@cucumber/cucumber");
-const { After, Before, AfterAll, BeforeAll } = require("@cucumber/cucumber");
-
-//@ts-ignore
-const assert = require("assert");
+import {
+  Given,
+  When,
+  Then,
+  After,
+  AfterAll,
+  BeforeAll,
+} from "@cucumber/cucumber";
 
 function parsePostData(postData: string) {
   const result: Record<string, string> = {};

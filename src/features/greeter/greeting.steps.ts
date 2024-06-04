@@ -1,8 +1,6 @@
-//@ts-ignore
-const { Given, When, Then } = require("@cucumber/cucumber");
-//@ts-ignore
-const assert = require("assert");
-const { sayHello } = require("./greeter");
+import assert from "assert";
+import { When, Then } from "@cucumber/cucumber";
+import { sayHello } from "./greeter";
 
 When("the greeter says hello {string}", function (name: string) {
   //@ts-ignore
