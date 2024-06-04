@@ -66,8 +66,8 @@ When("I wait for response", () => {
 
 When("I submit a form on {string}", async (selector: string) => {
   const [response] = await Promise.all([
-    page.waitForNavigation(), // The promise resolves after navigation has finished
-    page.click("input[type=submit]"), // Clicking the link will indirectly cause a navigation
+    page.waitForNavigation(),
+    page.click(selector),
   ]);
   const postDataStr = response?.request().postData();
   postData = parsePostData(postDataStr || "");
@@ -79,3 +79,8 @@ Then(
     assert.equal(postData?.[key], value);
   }
 );
+
+Then("The element {string} should exist", async (selector: string) => {
+  const found = await page.waitForSelector(selector);
+  assert.ok(found);
+});
