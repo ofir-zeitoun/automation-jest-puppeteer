@@ -67,6 +67,54 @@ describe("dev-express example", () => {
     })();
   });
 
+  it("Should select checkbox and select 7", (done) => {
+    (async () => {
+      const checkboxSelector = 'input[type="checkbox"][name="tried-test-cafe"]';
+
+      await page.waitForSelector(checkboxSelector);
+
+      await page.click(checkboxSelector);
+
+      const isChecked = await page.$eval(
+        checkboxSelector,
+        (checkbox) => checkbox.checked
+      );
+      expect(isChecked).toBe(true);
+
+      const sliderSelector = "#slider";
+
+      const slider = await page.$(sliderSelector);
+      if (!slider) {
+        done();
+        throw new Error("Slider not found");
+      }
+
+      const boundingBox = await slider?.boundingBox();
+
+      if (!boundingBox) {
+        done();
+        throw new Error("Slider container not found");
+      }
+      const sliderWidth = boundingBox.width;
+
+      const minValue = 0;
+      const maxValue = 10;
+      const targetValue = 7;
+
+      const positionRatio = (targetValue - minValue) / (maxValue - minValue);
+      const targetPosition = boundingBox.x + positionRatio * sliderWidth;
+
+      const handleY = boundingBox.y + boundingBox.height / 2;
+
+      await page.mouse.move(boundingBox.x + boundingBox.width / 2, handleY);
+      await page.mouse.down();
+      await page.mouse.move(targetPosition, handleY, { steps: 10 });
+      await page.mouse.up();
+
+      done();
+    })();
+  });
+
   it("should have 5 features", (done) => {
     (async () => {
       const featuresCount = await page.$$eval(
