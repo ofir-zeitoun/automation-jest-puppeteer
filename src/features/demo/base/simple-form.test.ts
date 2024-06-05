@@ -44,21 +44,21 @@ describe("simple-form example", () => {
       await page.type("body > form > input[name='name']", inputName);
 
       // option #1
-      // page.on("request", async (request) => {
+      // page.on("request", (request) => {
       //   const postData = request.postData();
       //   console.log("🚀 ~ postData:", postData);
       //   done();
       // });
 
       // option #2
-      // page.on("response", async (response) => {
+      // page.on("response", (response) => {
       //   let request = response.request();
       //   let url = request.url();
       //   console.log("🚀 ~ page.on ~ url:", url)
       //   let method = request.method();
       //   let postData = request.postData();
       //   if (method === "POST") {
-      //     console.log(postData); // this returns undefined
+      //     console.log(postData);
       //     done();
       //   }
       // });
