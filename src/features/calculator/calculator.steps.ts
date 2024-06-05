@@ -22,3 +22,17 @@ Then("Their diff should be {int}", function (expectedResult: number) {
   const sum = subtract(first, second);
   assert.equal(sum, expectedResult);
 });
+
+const operators = {
+  sum: add,
+  diff: subtract,
+};
+
+Then(
+  "Their {string} should be {int}",
+  function (operator: keyof typeof operators, expectedResult: number) {
+    const res = operators[operator]?.(first, second);
+    assert.equal(res, expectedResult);
+    // expect(res).toBe(expectedResult);
+  }
+);
