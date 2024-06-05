@@ -42,8 +42,8 @@ After(async function () {
 
 Given("I open a site {string}", async function (site: string) {
   page = await browser.newPage();
-  await page.goto(site);
   await page.setViewport(env.viewport);
+  await page.goto(site);
 });
 
 When(

@@ -18,8 +18,8 @@ describe("split example", () => {
 
   beforeEach(async () => {
     page = await browser.newPage();
-    await page.goto(site);
     await page.setViewport(env.viewport);
+    await page.goto(site);
   });
 
   afterEach(async () => {

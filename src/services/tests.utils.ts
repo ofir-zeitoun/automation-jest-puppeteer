@@ -21,8 +21,8 @@ export function createTestsUtil(site: string): PuppeteerHandles {
 
   beforeEach(async () => {
     res.page = await res.browser!.newPage();
-    await res.page.goto(site);
     await res.page.setViewport(env.viewport);
+    await res.page.goto(site);
   });
 
   afterEach(async () => {
