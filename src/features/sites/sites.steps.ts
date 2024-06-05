@@ -37,7 +37,7 @@ AfterAll(async () => {
 });
 
 After(async () => {
-  await page?.close();
+  page?.isClosed() || (await page?.close());
 });
 
 Given("I open a site {string}", async (site: string) => {
