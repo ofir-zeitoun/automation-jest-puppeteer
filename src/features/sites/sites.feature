@@ -1,6 +1,6 @@
 Feature: Sites
 
-  Scenario: Add two numbers
+  Scenario: Check the berkeley site's post data
 
     Given I open a site "https://cgi-lib.berkeley.edu/ex/simple-form.html"
     When I type "Hello" into selector "body > form > input[name='name']"
