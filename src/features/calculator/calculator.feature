@@ -12,9 +12,15 @@ Feature: Calculator
     When second number is 20
     Then Their sum should be 30
 
-    
+
   Scenario: Subtract two numbers
 
     Given first number is 30
     When second number is 10
     Then Their diff should be 20
+
+  Scenario: calc two numbers
+    Given first number is 30
+    When second number is 10
+    Then Their "sum" should be 40
+    And Their "diff" should be 20
